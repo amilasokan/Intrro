@@ -1,59 +1,86 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-
+<html >
 <head>
-  <link rel="stylesheet" href="CSS/index.css">
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <title>Intrro Connect</title>
 
+
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
 
 
 </head>
 
 <body>
-<div class="bottomImageContainer">
-  <img src="./Assets/bottomBg.svg" class="bottomImage">
-</div>
 
-<div class="mainBox">
-
-<div class="rightImageContainer">
-  <img src="./Assets/rightImage.jpg" class="rightImage">
-  <div class="logoContainer">
-    <img src="./Assets/logo.svg" class="logo">
-
-  </div>
+  <div class="bottomImageContainer">
+    <img src="./Assets/bottomBg.svg" class="bottomImage">
   </div>
 
-<div class="leftContentContainer">
-  <div class="topText">
-    <h1 class="connectLabel">Connect</h1>
-    <h4 class="subLabel">To get you started, please connect with at least one of
-your social channels below and download your contact list</h4>
+  <div class="mainBox">
 
+  <div class="rightImageContainer">
+    <img src="./Assets/rightImage.jpg" class="rightImage">
+    <div class="logoContainer">
+      <img src="./Assets/logo.svg" class="logo">
+
+    </div>
+    </div>
+
+  <div class="leftContentContainer">
+    <div class="topText">
+      <h1 class="connectLabel">Connect</h1>
+      <h4 class="subLabel">To get you started, please connect with at least one of
+  your social channels below and download your contact list</h4>
+
+    </div>
+<div class="connectButtons">
+  <main v-cloak>
+<div class="linkedinGuide"><button type="button" value="linkedin" class="buttonLayout"><input type="image" src="./Assets/linkedinButton.svg" class="linkedInAction" @click="toggleModal()"></button></div>
+  <div class="gmailButton"><button type="button" value="gmail" class="buttonLayout"><input type="image" src="./Assets/gmail.svg" class="gmailButtonAction"></button></div>
+  <div class="githubButton"><button type="button" value="github" class="buttonLayout"><input type="image" src="./Assets/github.svg" class="githubButtonAction"></button></div>
+  <div class="dribbbleButton"><button type="button" value="dribbble" class="buttonLayout"><input type="image" src="./Assets/dribbble.svg" class="dribbbleButtonAction"></button></div>
+
+  <div class="completeButton"><button type="button" value="complete" class="buttonLayout"><input type="image" src="./Assets/complete.svg" class="completeButtonAction"></button></div>
+
+  <!--  The Modal -->
+  <boardal v-if="modal.isOpen" :has-mask="modal.hasMask" :can-click-mask="modal.canClickMask" :has-x="modal.hasX" @toggle="toggleModal">
+    <article v-cloak>
+      <section>
+
+
+      </section>
+      <section>
+
+      <section>
+
+
+      </section>
+      <section>
+
+      
+      </section>
+    </article>
+    <footer>
+      <div class="forward-actions">
+<!--         <button class="secondary skip" :disabled="isLastStep" v-show="!isLastStep" @click="skip(2)">Skip</button> -->
+        <button class="primary next" :disabled="isLastStep" v-show="!isLastStep" @click="skip(1)"><i class="fa fa-fw fa-lg" :class="nextIcon"></i></button>
+        <button class="accent save" :disabled="!isLastStep" v-show="isLastStep" @click="finish"><i class="fa fa-fw fa-lg fa-check"></i></button>
+      </div>
+      <div class="step-dots" v-if="hasDots">
+        <div class="step-dot" v-for="n in max" :class="{active: n == step}" @click="goToStep(n)"></div>
+      </div>
+      <div class="back-actions">
+        <button class="secondary cancel prev" :disabled="isFirstStep" xv-show="!isFirstStep" @click="skip(-1)"><i class="fa fa-fw fa-lg" :class="backIcon"></i></button>
+      </div>
+    </footer>
+  </boardal>
   </div>
-  <div class="connectButtons">
-<div class="linkedinButton"> <button type="button" value="linkedin" class="buttonLayout">
- <img src="./Assets/linkedinButton.svg" class="linkedinButtonAction"></button>
+</main>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js'></script>
 
-
-<div class="gmailButton"><button type="button" value="gmail" class="buttonLayout"><input type="image" src="./Assets/gmail.svg" class="gmailButtonAction"></button></div>
-<div class="githubButton"><button type="button" value="github" class="buttonLayout"><input type="image" src="./Assets/github.svg" class="githubButtonAction"></button></div>
-<div class="dribbbleButton"><button type="button" value="dribbble" class="buttonLayout"><input type="image" src="./Assets/dribbble.svg" class="dribbbleButtonAction"></button></div>
-
-<div class="completeButton"><button type="button" value="complete" class="buttonLayout"><input type="image" src="./Assets/complete.svg" class="completeButtonAction"></button></div>
-
-  </div>
-
-</div>
-
-</div>
-
-
-
-  <!-- *************************************************** -->
-  <script src="Index.js"></script>
+    <script src="js/index.js"></script>
 
 </body>
-
 </html>
