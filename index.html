@@ -48,19 +48,72 @@
   <boardal v-if="modal.isOpen" :has-mask="modal.hasMask" :can-click-mask="modal.canClickMask" :has-x="modal.hasX" @toggle="toggleModal">
     <article v-cloak>
       <section>
+        <div class="leftTextContainer">
 
 
+<h1 class="connectLinkedInLabel">Connect with LinkedIn</h1>
+<h4 class="connectStep1">Click the Go to LinkedIn button below. This would take you to your LinkedIn Data page where you may be asked to login. Navigate to 'Privacy' Tab.</h1>
+<div class="gotolinkedin"><button type="button" name="gotolinkedin" class="buttonLayout"><input type="image" src="./Assets/gotolinkedin.svg" class="gotolinkedinaction"></button></div>
+</div>
+<div class="rightContainer">
+  <img src="./Assets/step1.jpg" alt="" class="stepImage">
+</div>
       </section>
       <section>
 
+        <div class="leftTextContainer">
+
+
+<h1 class="connectLinkedInLabel">Request your Data</h1>
+<h4 class="connectStep1">Under the <span class="boldWords">'Download your Data'</span> Section, Select <span class="boldWords">'Connections'</span>. Then click the <span class="boldWords">'Request Archive'</span> Button and type in your password if prompted. LinkedIn will then send you an email when your file is ready.</h1>
+</div>
+<div class="rightContainer">
+  <img src="./Assets/step2.jpg" alt="" class="stepImage">
+</div>
+</section>
       <section>
+
+        <div class="leftTextContainer">
+
+
+        <h1 class="connectLinkedInLabel">Download your Data</h1>
+        <h4 class="connectStep1">When you receive your email, Click on the required link where you will be redirected back to the Download your connections data page in LinkedIn. Click the <span class="boldWords">'Download Archive'</span> button and download your data file and <span class="boldWords">Upload it below</span></h1>
+
+<div class="file-upload">
+
+  <div class="image-upload-wrap">
+      <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+      <div class="drag-text">
+        <h3>Drag and drop your CSV or Click here to select</h3>
+      </div>
+    </div>
+    <div class="file-upload-content">
+      <img class="file-upload-image" src="#" alt="your image" />
+      <div class="image-title-wrap">
+        <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+        <div class="rightContainer">
+        <img src="./Assets/step3.jpg" alt="" class="stepImage">
+        </div>
+
 
 
       </section>
-      <section>
 
-      
-      </section>
     </article>
     <footer>
       <div class="forward-actions">
@@ -78,6 +131,10 @@
   </boardal>
   </div>
 </main>
+
+
+
+<script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js'></script>
 
     <script src="js/index.js"></script>
